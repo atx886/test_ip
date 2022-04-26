@@ -14,6 +14,9 @@ wb = openpyxl.Workbook()
 # save()方法 一个参数,保存路径,会覆盖.
 wb.save('a.xlsx')
 
+global max_wrong
+max_wrong = 0
+
 
 def randomwait():
     t = random.randint(1, 3)
@@ -98,7 +101,7 @@ global ck
 # print(r.content)
 
 def logn():
-    global ck
+    global ck, max_wrong
     url1 = 'https://www.chaojijishi.com/api/mobile/send_verification_codes'
     phone = getphone()
     # while phone is None:
@@ -115,7 +118,9 @@ def logn():
     r = session.post(url1, data=data)
     print('验证码方式', r.status_code)
     p = gettext(r)
-
+    if len(phone[0]) < 10:
+        max_wrong += 1
+        return
     while p != '请求成功':
         phone = getphone()
         # while phone is None:
@@ -126,6 +131,9 @@ def logn():
         r = session.post(url1, data=data)
         print(r.status_code)
         p = gettext(r)
+        if len(phone[0]) < 10:
+            max_wrong += 1
+            return
 
     url2 = 'https://www.chaojijishi.com/api/code/validate_of_mobile_and_code'
     time.sleep(18)
@@ -247,6 +255,8 @@ i = 0
 x = 0
 try:
     while i < 200:
+        if max_wrong > 6:
+            break
         try:
             sign()
             print('已完成', i)

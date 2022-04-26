@@ -254,7 +254,7 @@ def sign():
 i = 0
 x = 0
 try:
-    while i < 60:
+    while i < 500:
         if max_wrong > 6:
             break
         try:

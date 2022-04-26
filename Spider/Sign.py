@@ -245,14 +245,17 @@ def sign():
 
 i = 0
 x = 0
-while i < 2:
-    try:
-        sign()
-        print('已完成', i)
-        i += 1
-    except Exception:
-        print('重新来')
-        sign()
-        print('已完成', i)
-        i += 1
+try:
+    while i < 2:
+        try:
+            sign()
+            print('已完成', i)
+            i += 1
+        except Exception:
+            print('重新来')
+            sign()
+            print('已完成', i)
+            i += 1
+except Exception:
+    print('结束')
 发送邮件()

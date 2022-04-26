@@ -66,7 +66,7 @@ def writeexcle(phone):
     print(max_row)
     row_max = 'a' + str(max_row)
     print(row_max)
-    sheet[row_max] = str(phone)
+    sheet[row_max] = phone[0].strip('\'')
     wb.save('a.xlsx')
 
 

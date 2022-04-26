@@ -246,7 +246,7 @@ def sign():
 i = 0
 x = 0
 try:
-    while i < 2:
+    while i < 200:
         try:
             sign()
             print('已完成', i)

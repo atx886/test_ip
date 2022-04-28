@@ -22,8 +22,12 @@ d = webdriver.Chrome(chrome_options=chrome_options, executable_path=chromedriver
 
 
 # d = webdriver.Firefox()
+global sys1
+sys1 = 0
 
 d.implicitly_wait(5)
+
+
 def rw():
     time.sleep(1)
 
@@ -184,15 +188,18 @@ def zz():
 
 
 def auto():
+    global sys1
     p = writeexcle()
     while p is None:
         return 0
     dl(p)
     # dj()
     x = outid()
+    sys1 += 1
     a = sm(x[0], x[1])
     while a == 0:
         x = outid()
+        sys1 += 1
         a = sm(x[0], x[1])
     zy()
     zz()
@@ -201,8 +208,12 @@ def auto():
 
 
 i = 0
-while auto() == 1:
-    i += 1
-    print(i)
-    d = webdriver.Chrome(chrome_options=chrome_options, executable_path=chromedriver)
-    d.implicitly_wait(5)
+try:
+    while auto() == 1:
+        i += 1
+        print(i)
+        d = webdriver.Chrome(chrome_options=chrome_options, executable_path=chromedriver)
+        d.implicitly_wait(5)
+    print("使用了", sys1)
+except Exception:
+    print("使用了", sys1)

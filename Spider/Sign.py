@@ -182,8 +182,8 @@ def setpassword(phone, code, ck):
     url2 = 'https://www.chaojijishi.com/api/register'
     data2 = {
         'mobile': phone,
-        'password': 888888,
-        'repeat_pwd': 888888,
+        'password': 123456,
+        'repeat_pwd': 123456,
         'code': code,
         'login_or_register': 2,
         'invite_code': 'sbVLkhtlQ',
@@ -200,7 +200,7 @@ def logn1(phone, ck):
     url3 = 'https://www.chaojijishi.com/api/login'
     data3 = {
         'mobile': phone,
-        'password': 888888,
+        'password': 123456,
         'XDEBUG_SESSION_START': 'PHPSTORM',
         'timestamp': int(round(time.time() * 1000))
     }
@@ -254,7 +254,7 @@ def sign():
 i = 0
 x = 0
 try:
-    while i < 130:
+    while i < 210:
         if max_wrong > 6:
             break
         try:

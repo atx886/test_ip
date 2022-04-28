@@ -40,7 +40,7 @@ def dl(phone):
     rw()
     d.find_element_by_xpath(
         '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[5]/uni-view[2]/uni-input/div/input').send_keys(
-        123456)
+        888888)
     rw()
     d.find_element_by_xpath(
         '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[5]/uni-view[3]/uni-view[1]/uni-view').click()
@@ -150,11 +150,11 @@ def zy():
     rw()
     d.find_element_by_xpath(
         '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[1]/uni-view[1]/uni-view[2]/uni-view/uni-input/div/input').send_keys(
-        123456)
+        888888)
     rw()
     d.find_element_by_xpath(
         '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[1]/uni-view[2]/uni-view[2]/uni-view/uni-input/div/input').send_keys(
-        123456)
+        888888)
     rw()
     d.find_element_by_xpath('/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[2]').click()
 
@@ -180,7 +180,7 @@ def zz():
     rw()
     d.find_element_by_xpath(
         '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[2]/uni-view[2]/uni-view/uni-view/uni-view[4]/uni-view[2]/uni-input/div/input').send_keys(
-        123456)
+        888888)
     # 确定
     rw()
     d.find_element_by_xpath(

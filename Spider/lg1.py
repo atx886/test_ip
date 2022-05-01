@@ -42,14 +42,17 @@ def dl(phone):
         '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[5]/uni-view[2]/uni-input/div/input').send_keys(
         123456)
     rw()
-    d.find_element_by_xpath(
-        '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[5]/uni-view[3]/uni-view[1]/uni-view').click()
+    t = d.find_element_by_xpath(
+        '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[5]/uni-view[3]/uni-view[1]/uni-view')
+    d.execute_script("arguments[0].click();", t)
     rw()
-    d.find_element_by_xpath(
-        '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[5]/uni-view[5]/uni-view/uni-view').click()
+    t = d.find_element_by_xpath(
+        '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[5]/uni-view[5]/uni-view/uni-view')
+    d.execute_script("arguments[0].click();", t)
     rw()
-    d.find_element_by_xpath(
-        '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[5]/uni-view[4]').click()
+    t = d.find_element_by_xpath(
+        '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[5]/uni-view[4]')
+    d.execute_script("arguments[0].click();", t)
     rw()
     d.get('https://www.chaojijishi.com/h5/#/pages/subpack1/set/user-id-card-data?type=1')
 

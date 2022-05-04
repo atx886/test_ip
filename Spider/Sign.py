@@ -7,7 +7,7 @@ import time
 from urllib.parse import unquote, quote
 import re
 
-from Spider.ph1 import prw
+from ph1 import *
 from ph import *
 from openpyxl import load_workbook, Workbook
 

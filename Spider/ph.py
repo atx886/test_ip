@@ -70,34 +70,3 @@ def writeexcle(phone):
     wb.save('a.xlsx')
 
 
-def 发送邮件():
-    # 1. 连接邮箱服务器
-    con = smtplib.SMTP_SSL('smtp.163.com', 465)
-    youxiangjieshou = 'sch1532694569s@163.com'
-    # 2. 登录邮箱
-    con.login('sch1532694569s@163.com', 'NVEZDEBNGTNDKCIX')
-    # 2. 准备数据
-    # 创建邮件对象
-    msg = MIMEMultipart()
-    # 设置邮件主题
-    subject = Header('文件附件发送', 'utf-8').encode()
-    msg['Subject'] = subject
-    # 设置邮件发送者
-    msg['From'] = 'hhh'
-    # 设置邮件接受者
-    msg['To'] = youxiangjieshou
-    # 添加文件附件
-    succesful = 'a.xlsx'
-    # faile = str((date.today() + timedelta(days=-1))) + '未付款.xlsx'
-    file1 = MIMEText(open(succesful, 'rb').read(), 'base64', 'utf-8')
-    file1["Content-Disposition"] = 'attachment; filename="' + succesful + '"'
-    msg.attach(file1)
-    # 中文时使用下面方法
-    # if os.path.exists(path + "/" + (str((date.today() + timedelta(days=-1))) + '未付款.xlsx')):
-    #     file2 = MIMEText(open(faile, 'rb').read(), 'base64', 'utf-8')
-    #     file2.add_header("Content-Disposition", 'attachment', filename=('gbk', '', faile))
-    #     msg.attach(file2)
-    # 3.发送邮件
-    con.sendmail('sch1532694569s@163.com', youxiangjieshou, msg.as_string())
-    print("发送成功")
-    con.quit()

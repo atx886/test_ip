@@ -6,6 +6,8 @@ import requests
 import time
 from urllib.parse import unquote, quote
 import re
+
+from Spider.ph1 import prw
 from ph import *
 from openpyxl import load_workbook, Workbook
 
@@ -254,7 +256,7 @@ def sign():
 i = 0
 x = 0
 try:
-    while i < 280:
+    while i < 320:
         if max_wrong > 6:
             break
         try:
@@ -268,4 +270,5 @@ try:
             i += 1
 except Exception:
     print('结束')
-#发送邮件()
+# 发送邮件()
+prw()

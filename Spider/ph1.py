@@ -19,4 +19,11 @@ def writeexcle():
         return None
 
 
+def prw():
+    file = 'a.xlsx'
+    wb = load_workbook(file)
+    sheet = wb.active
+    for row in sheet:
+        for cell in row:
+            print(cell.value)
 

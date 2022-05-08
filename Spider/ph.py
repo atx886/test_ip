@@ -7,8 +7,8 @@ from email.mime.text import MIMEText
 from email.header import Header
 import time
 
-token2 = 'dd03c30290d6-239153'
-token1 = 'ba52f3e62f0d-258930'
+token1 = 'dd03c30290d6-239153'
+token2 = 'ba52f3e62f0d-258930'
 apiName = 'MY.431035769'
 
 

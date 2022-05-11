@@ -70,7 +70,7 @@ def getuserid(r):
     return p[0]
 
 
-url = 'https://www.chaojijishi.com/h5/#/pages/login/register?invite_code=sbVLkhtlQ'
+url = 'https://www.chaojijishi.com'
 
 header1 = {
 
@@ -96,6 +96,7 @@ session = requests.session()
 #
 
 r = session.get(url)
+print(r.content)
 print('开始', r.status_code)
 global ck
 

@@ -9,12 +9,15 @@ import time
 
 token1 = 'dd03c30290d6-239153'
 token2 = 'ba52f3e62f0d-258930'
-apiName = 'MY.431035769'
+apiName1 = 'MY.431035769'
+apiName2 = "MY.1529616001"
+pw1 = 'qq200200'
+pw2 = 'qq0000'
 
 
 # 获取token
 def gettk():
-    url = 'http://api.miyun.pro/api/login?apiName=MY.431035769&password=qq200200'
+    url = 'http://api.miyun.pro/api/login?apiName=' + apiName2 + '&password=' + pw2
 
     r = requests.get(url)
 
@@ -69,4 +72,5 @@ def writeexcle(phone):
     sheet[row_max] = phone[0].strip('\'')
     wb.save('a.xlsx')
 
-
+# gettk()
+# checktk()

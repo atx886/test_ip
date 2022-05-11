@@ -22,6 +22,11 @@ from ph1 import *
 from ph import *
 from openpyxl import load_workbook, Workbook
 
+# Workbook()方法 不用参数,会新建一个xlsx文件.
+wb = openpyxl.Workbook()
+# save()方法 一个参数,保存路径,会覆盖.
+wb.save('a.xlsx')
+
 
 def getphone():
     phone = getph()
@@ -96,6 +101,7 @@ def writeexcle(phone):
 
 def zc(phone):
     d = webdriver.Chrome(chrome_options=chrome_options, executable_path=chromedriver)
+    # d = webdriver.Firefox()
     d.implicitly_wait(5)
     d.get('https://www.chaojijishi.com/h5/#/pages/login/register')
     d.find_element_by_xpath(
@@ -108,6 +114,7 @@ def zc(phone):
     d.execute_script("arguments[0].click();", t)
     rw()
     if t.text == "获取验证码":
+        d.close()
         return
     rw()
     x = 0
@@ -119,6 +126,7 @@ def zc(phone):
         print("尝试", x)
         if x == 6:
             closeph(phone)
+            d.close()
             return
     # 验证码方式
     d.find_element_by_xpath(

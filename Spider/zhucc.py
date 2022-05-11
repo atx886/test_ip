@@ -66,8 +66,16 @@ def getuserid(r):
     return p[0]
 
 
-d = webdriver.Firefox()
-d.implicitly_wait(10)
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--disable-dev-shm-usage')
+chromedriver = "/usr/bin/chromedriver"
+os.environ["webdriver.chrome.driver"] = chromedriver
+
+
+# d = webdriver.Chrome(chrome_options=chrome_options, executable_path=chromedriver)
 
 
 def rw():
@@ -87,6 +95,8 @@ def writeexcle(phone):
 
 
 def zc(phone):
+    d = webdriver.Chrome(chrome_options=chrome_options, executable_path=chromedriver)
+    d.implicitly_wait(5)
     d.get('https://www.chaojijishi.com/h5/#/pages/login/register')
     d.find_element_by_xpath(
         '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[3]/uni-view[3]/uni-view[1]/uni-view/uni-input/div/input').send_keys(
@@ -138,6 +148,7 @@ def zc(phone):
         '/html/body/uni-app/uni-page/uni-page-wrapper/uni-page-body/uni-view/uni-view[5]')
     d.execute_script("arguments[0].click();", t)
     writeexcle(phone)
+    d.close()
     # d.get('https://www.chaojijishi.com/h5/#/pages/subpack1/set/user-id-card-data?type=1')
 
 

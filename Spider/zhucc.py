@@ -1,20 +1,20 @@
-from selenium import webdriver
-import time
-from datetime import timedelta, date
-
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-
-import os
-
-import json
-import random
-# import cehsi
-import openpyxl
-import requests
-import time
-from urllib.parse import unquote, quote
-import re
+# from selenium import webdriver
+# import time
+# from datetime import timedelta, date
+#
+# from selenium.webdriver.common.by import By
+# from selenium.webdriver.support.wait import WebDriverWait
+#
+# import os
+#
+# import json
+# import random
+# # import cehsi
+# import openpyxl
+# import requests
+# import time
+# from urllib.parse import unquote, quote
+# import re
 
 # Workbook()方法 不用参数,会新建一个xlsx文件.
 # wb = openpyxl.Workbook()
